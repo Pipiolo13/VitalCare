@@ -5,3 +5,7 @@ from django.shortcuts import render, HttpResponse
 
 def home(request):
     return HttpResponse("<h1>Página de inicio</h1>")
+
+
+def inventario(request):
+    return HttpResponse("<h1>Página de Inventarios de medicamentos</h1>")
