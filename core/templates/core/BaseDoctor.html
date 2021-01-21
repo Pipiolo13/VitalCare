@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    
+<head>
+    {% load  static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'core/img/favicon.ico'%}">
+    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/style.css'%}">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a class="logo">
+					<img src="{% static 'core/img/logo.png'%}" width="35" height="35" alt=""> <span>Preclinic</span>
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span>Notifications</span>
+                        </div>
+                        
+                        <div class="topnav-dropdown-footer">
+                            <a href="activities.html">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+                </li>
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img">
+							<img class="rounded-circle" src="{% static 'core/img/user.jpg'%}" width="24" alt="Admin">
+							<span class="status online"></span>
+						</span>
+						<span>Medico</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">Mi Perfil</a>
+                    <a class="dropdown-item" href="edit-profile.html">Editar Perfil</a>
+                    <a class="dropdown-item" href="settings.html">Cerrar Sesion</a>
+					</div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">Mi Perfil</a>
+                    <a class="dropdown-item" href="edit-profile.html">Editar Perfil</a>
+                    <a class="dropdown-item" href="settings.html">Cerrar Sesion</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+                        <li class="active">
+                            <a href="  "><i class="fa fa-dashboard"></i> <span>Inicio</span></a>
+                        </li>
+						
+                        <li class="submenu">
+							<a href="#"><i class="fa fa-wheelchair"></i> <span> Pacientes </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+                                <li><a href="employees.html">Registro de Historial Clinico</a></li>
+                                <li><a href="employees.html">Lista de Pacientes</a></li>
+								
+							</ul>
+						</li>
+                        <li>
+                            <a href="schedule.html"><i class="fa fa-calendar"></i> <span>Agenda</span></a>
+                        </li>
+                           
+                </div>
+				
+				
+
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg1"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>98</h3>
+                            <span class="widget-title1">Doctors <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg2"><i class="fa fa-user-o"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>1072</h3>
+                            <span class="widget-title2">Patients <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg3"><i class="fa fa-user-md" aria-hidden="true"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>72</h3>
+                            <span class="widget-title3">Attend <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg4"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>618</h3>
+                            <span class="widget-title4">Pending <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-title">
+                                <h4>Patient Total</h4>
+                                <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 15% Higher than Last Month</span>
+                            </div>	
+                            <canvas id="linegraph"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-title">
+                                <h4>Patients In</h4>
+                                <div class="float-right">
+                                    <ul class="chat-user-total">
+                                        <li><i class="fa fa-circle current-users" aria-hidden="true"></i>ICU</li>
+                                        <li><i class="fa fa-circle old-users" aria-hidden="true"></i> OPD</li>
+                                    </ul>
+                                </div>
+                            </div>	
+                            <canvas id="bargraph"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-8 col-xl-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title d-inline-block">Upcoming Appointments</h4> <a href="appointments.html" class="btn btn-primary float-right">View all</a>
+                        </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="{% static 'core/js/jquery-3.2.1.min.js'%}"></script>
+	<script src="{% static 'core/js/popper.min.js'%}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'core/js/jquery.slimscroll.js'%}"></script>
+    <script src="{% static 'core/js/Chart.bundle.js'%}"></script>
+    <script src="{% static 'core/js/chart.js'%}"></script>
+    <script src="{% static 'core/js/app.js'%}"></script>
+
+</body>
+
+
+
+</html>
