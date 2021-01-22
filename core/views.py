@@ -3,5 +3,8 @@ from django.shortcuts import render, HttpResponse
 # Create your views here.....
 
 
-def doctor (request):
-    return  render(request,"core/BaseDoctor.html")
+def home (request):
+    return  render(request,"core/home.html")
+
+def listaPacientes (request):
+    return  render(request,"core/ListaPacientes.html")
