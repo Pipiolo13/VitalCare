@@ -18,6 +18,6 @@ from django.urls import path
 from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='inicio'),
-    path('inventario/', views.home, name='inventario'),
+    path('', views.home, name='inventario'),
+    path('bodega/', views.inventario, name='bodega'),
 ]

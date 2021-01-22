@@ -4,8 +4,8 @@ from django.shortcuts import render, HttpResponse
 
 
 def home(request):
-    return HttpResponse("<h1>Página de inicio</h1>")
+    return render(request, "core/base_inventario.html")
 
 
 def inventario(request):
-    return HttpResponse("<h1>Página de Inventarios de medicamentos</h1>")
+    return render(request, "core/bodega.html")
