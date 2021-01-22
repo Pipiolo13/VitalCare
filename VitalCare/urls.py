@@ -19,4 +19,7 @@ from core import views
 
 urlpatterns = [
     path('enfermeria/', views.enfermeria, name='enfermeria'),
+    
     path('admin/', admin.site.urls),
+
+]
