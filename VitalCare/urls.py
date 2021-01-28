@@ -16,22 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.core import views
-
-
-from django.core import views
+from core import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.index, name='index'),
     path('listaPacientes', views.listaPacientes, name='listaPacientes'),
     path('presentacion/', views.presentacion, name='presentacion'),
     path('mision/', views.mision, name='mision'),
     path('vision/', views.vision, name='vision'),
     path('contacto/', views.contacto, name='contacto'),
     path('admin/', admin.site.urls),
-    path('', views.home, name='inventario'),
+    path('home/', views.base_home, name='base_home'),
     path('bodega/', views.inventario, name='bodega'),
-    path('/login', views.loguin, name='loguin'),
+    path('login/', views.login, name='login'),
     path('enfermeria/', views.enfermeria, name='enfermeria'),
     path('admin/', admin.site.urls),
 ]

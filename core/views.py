@@ -4,8 +4,8 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 
-# def home(request):
-#    return render(request, "core/base_inventario.html")
+def base_home(request):
+    return render(request, "core/base_home.html")
 
 
 def inventario(request):
@@ -20,12 +20,12 @@ def listaPacientes(request):
     return render(request, "core/ListaPacientes.html")
 
 
-def loguin(request):
-    return render(request, "core/loguin.html")
+def login(request):
+    return render(request, "core/login.html")
 
 
-def home(request):
-    return render(request, "core/home.html")
+def index(request):
+    return render(request, "core/index.html")
 
 
 def presentacion(request):

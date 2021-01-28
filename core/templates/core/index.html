@@ -1,0 +1,635 @@
+<!-- 
+PROJECT: Medic | Medical HTML Template
+VERSION: 1.0.0
+AUTHOR: Themefisher
+WEBSITE: https://themefisher.com
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+  <!-- ** Basic Page Needs ** -->
+  <meta charset="utf-8">
+  <title>Medic | Medical HTML Template</title>
+
+
+  <!-- ** Mobile Specific Metas ** -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Medical HTML Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Medical HTML Template v1.0">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- bootstrap -->
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'core/plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="{% static 'core/plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'core/plugins/slick/slick-theme.css' %}">
+  <!-- FancyBox -->
+  <link rel="stylesheet" href="{% static 'core/plugins/fancybox/jquery.fancybox.min.css' %}">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="{% static 'core/plugins/fontawesome/css/all.min.css' %}">
+  <!-- animate.css -->
+  <link rel="stylesheet" href="{% static 'core/plugins/animation/animate.min.css' %}">
+  <!-- jquery-ui -->
+  <link rel="stylesheet" href="{% static 'core/plugins/jquery-ui/jquery-ui.css' %}">
+  <!-- timePicker -->
+  <link rel="stylesheet" href="{% static 'core/plugins/timePicker/timePicker.css' %}">
+
+  <!-- Stylesheets -->
+  <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="icon" href="{% static 'core/images/favicon.png' %}" type="image/x-icon">
+
+</head>
+
+
+<body>
+  <div class="page-wrapper">
+
+
+
+    <!--header top-->
+
+    <!--header top-->
+
+    <!--Header Upper-->
+    <section class="header-uper">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-4 col-lg-3">
+            <div class="logo">
+              <a href="homeBaseVP.html">
+                <img loading="lazy" class="img-fluid" src="{% static 'core/images/logo.png' %}" alt="logo">
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-8 col-lg-9">
+            <div class="right-side">
+              <ul class="contact-info pl-0 mb-4 mb-md-0">
+                <li class="item text-left">
+                  <div class="icon-box">
+                    <i class="far fa-envelope"></i>
+                  </div>
+                  <strong>Email</strong>
+                  <br>
+                  <a href="mailto:info@medic.com">
+                    <span>info@medic.com</span>
+                  </a>
+                </li>
+                <li class="item text-left">
+                  <div class="icon-box">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <strong>Call Now</strong>
+                  <br>
+                  <span>+ (88017) - 123 - 4567</span>
+                </li>
+              </ul>
+              <div class="link-btn text-center text-lg-right">
+                <a href="{% url 'login' %}" class="btn-style-one">Ingresar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Header Upper-->
+
+
+    <!--Main Header-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarLinks">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="homeBaseVP.html">Home</a>
+            </li>
+            <li class="nav-item @@about">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item @@service">
+              <a class="nav-link" href="service.html">Service</a>
+            </li>
+            <li class="nav-item @@gallery">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item @@team">
+              <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item @@appointment">
+              <a class="nav-link" href="appointment.html">Appointment</a>
+            </li>
+            <li class="nav-item dropdown @@blogs">
+              <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Blogs</a>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item @@blog" href="blog.html">Blog</a></li>
+                <li><a class="dropdown-item @@blogDetails" href="blog-details.html">Blog Details</a></li>
+                <li class="dropdown dropdown-submenu dropright">
+                  <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
+
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
+                    <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item @@contact">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--End Main Header -->
+
+    <!--=================================
+=            Page Slider            =
+==================================-->
+
+    <section class="team-section section" align="center">
+
+      {% block cabecera %}{% endblock %}
+      {% block pie %}{% endblock %}
+    </section>
+
+
+
+    <!--====  End of Page Slider  ====-->
+
+    <!--testimonial-section-->
+    <section class="testimonial-section" style="background: url(images/testimonials/1.jpg);">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title text-center">
+              <h3>What Our
+                <span>Patients Says</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="testimonial-carousel">
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/1.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>Adam Rose</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/2.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>David Warner</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/3.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>Amy Adams</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/1.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>Adam Rose</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/2.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>David Warner</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/3.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>Amy Adams</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/1.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>Adam Rose</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/2.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>David Warner</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+              <!--Slide Item-->
+              <div class="slide-item">
+                <div class="inner-box text-center">
+                  <div class="image-box">
+                    <figure>
+                      <img loading="lazy" src="{% static 'core/images/testimonials/3.png' %}" alt="">
+                    </figure>
+                  </div>
+                  <h6>Amy Adams</h6>
+                  <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia consectetur, dolor sit amet,
+                    consectetur, numquam Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Molestias, at?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End testimonial-section-->
+
+    <!--about section-->
+
+    <!--End about section-->
+
+    <!--Start about us area-->
+    <section class="service-tab-section section">
+      <div class="outer-box clearfix">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Nav tabs -->
+              <div class="tabs mb-5">
+                <ul class="nav nav-tabs justify-content-center" id="aboutTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="dormitory-tab" data-toggle="tab" href="#dormitory" role="tab"
+                      aria-controls="dormitory" aria-selected="true">dormitory</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="orthopedic-tab" data-toggle="tab" href="#orthopedic" role="tab"
+                      aria-controls="orthopedic" aria-selected="false">orthopedic</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="sonogram-tab" data-toggle="tab" href="#sonogram" role="tab"
+                      aria-controls="sonogram" aria-selected="false">sonogram</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="x-ray-tab" data-toggle="tab" href="#x-ray" role="tab" aria-controls="x-ray"
+                      aria-selected="false">x-ray</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="diagnostic-tab" data-toggle="tab" href="#diagnostic" role="tab"
+                      aria-controls="diagnostic" aria-selected="false">diagnostic</a>
+                  </li>
+                </ul>
+              </div>
+              <!--Start single tab content-->
+              <div class="tab-content" id="aboutTab">
+                <div class="service-box tab-pane fade show active" id="dormitory">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <img loading="lazy" class="img-fluid" src="{% static 'core/images/services/service-one.jpg' %}"
+                        alt="service-image">
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contents">
+                        <div class="section-title">
+                          <h3>dormitory</h3>
+                        </div>
+                        <div class="text">
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added. then a
+                            dental prosthetic is added.then a dental pros- thetic is added.</p>
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added. then a dental
+                            prosthetic is added.then a dental pros- thetic is added.</p>
+                        </div>
+                        <ul class="content-list">
+                          <li>
+                            <i class="far fa-dot-circle"></i>Whitening is among the most popular dental
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                        </ul>
+                        <a href="services.html" class="btn btn-style-one">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End single tab content-->
+                <!--Start single tab content-->
+                <div class="service-box tab-pane fade" id="orthopedic">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <img loading="lazy" class="img-fluid" src="{% static 'core/images/services/service-two.jpg' %}"
+                        alt="service-image">
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contents">
+                        <div class="section-title">
+                          <h3>orthopedic</h3>
+                        </div>
+                        <div class="text">
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                        </div>
+                        <ul class="content-list">
+                          <li>
+                            <i class="far fa-dot-circle"></i>Whitening is among the most popular dental
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                        </ul>
+                        <a href="services.html" class="btn btn-style-one">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End single tab content-->
+                <!--Start single tab content-->
+                <div class="service-box tab-pane fade" id="sonogram">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <img loading="lazy" class="img-fluid" src="{% static 'core/images/services/service-three.jpg' %}"
+                        alt="service-image">
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contents">
+                        <div class="section-title">
+                          <h3>sonogram</h3>
+                        </div>
+                        <div class="text">
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                        </div>
+                        <ul class="content-list">
+                          <li>
+                            <i class="far fa-dot-circle"></i>Whitening is among the most popular dental
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                        </ul>
+                        <a href="services.html" class="btn btn-style-one">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End single tab content-->
+                <!--Start single tab content-->
+                <div class="service-box tab-pane fade" id="x-ray">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <img loading="lazy" class="img-fluid" src="{% static 'core/images/services/service-four.jpg' %}"
+                        alt="service-image">
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contents">
+                        <div class="section-title">
+                          <h3>x-ray</h3>
+                        </div>
+                        <div class="text">
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                        </div>
+                        <ul class="content-list">
+                          <li>
+                            <i class="far fa-dot-circle"></i>Whitening is among the most popular dental
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                        </ul>
+                        <a href="services.html" class="btn btn-style-one">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End single tab content-->
+                <!--Start single tab content-->
+                <div class="service-box tab-pane fade" id="diagnostic">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <img loading="lazy" class="img-fluid" src="{% static 'core/images/services/service-five.jpg' %}"
+                        alt="service-image">
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="contents">
+                        <div class="section-title">
+                          <h3>diagnostic</h3>
+                        </div>
+                        <div class="text">
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                          <p>The implant fixture is first placed, so that it ilikely to osseointegrate,
+                            then a dental prosthetic is added.
+                            then a dental prosthetic is added.then a dental pros- thetic is added.</p>
+                        </div>
+                        <ul class="content-list">
+                          <li>
+                            <i class="far fa-dot-circle"></i>Whitening is among the most popular dental
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                          <li>
+                            <i class="far fa-dot-circle"></i>Teeth cleaning is part of oral hygiene and
+                            involves
+                          </li>
+                        </ul>
+                        <a href="services.html" class="btn btn-style-one">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End single tab content-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End about us area-->
+
+    <!--Service Section-->
+
+    <!--End Service Section-->
+
+    <!--team section-->
+
+    <!--End team section-->
+
+    <!-- Contact Section -->
+
+    <!-- End Contact Section -->
+
+    <!--footer-main-->
+    <footer class="footer-main">
+      <div class="footer-bottom">
+        <div class="container clearfix">
+          <div class="copyright-text">
+            <p>&copy; Copyright 2021. Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></p>
+          </div>
+          <ul class="footer-bottom-link">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!--End footer-main-->
+
+    <!-- scroll-to-top -->
+    <div id="back-to-top" class="back-to-top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+
+  </div>
+  <!--End pagewrapper-->
+
+
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+    <span class="icon fa fa-angle-up"></span>
+  </div>
+
+
+  <!-- jquery -->
+  <script src="{% static 'core/plugins/jquery.min.js' %}"></script>
+  <!-- bootstrap -->
+  <script src="{% static 'core/plugins/bootstrap/bootstrap.min.js' %}"></script>
+  <!-- Slick Slider -->
+  <script src="{% static 'core/plugins/slick/slick.min.js' %}"></script>
+  <script src="{% static 'core/plugins/slick/slick-animation.min.js' %}"></script>
+  <!-- FancyBox -->
+  <script src="{% static 'core/plugins/fancybox/jquery.fancybox.min.js' %}" defer></script>
+  <!-- Google Map -->
+  <script src="{% static 'core/https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU' %}"
+    defer></script>
+  <script src="{% static 'core/plugins/google-map/gmap.js' %}" defer></script>
+
+  <!-- jquery-ui -->
+  <script src="{% static 'core/plugins/jquery-ui/jquery-ui.js' %}" defer></script>
+  <!-- timePicker -->
+  <script src="{% static 'core/plugins/timePicker/timePicker.js' %}" defer></script>
+
+  <!-- script js -->
+  <script src="{% static 'core/js/script.js' %}"></script>
+</body>
+
+</html>
