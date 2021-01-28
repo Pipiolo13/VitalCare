@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core import views
 
 from django.core import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+<<<<<<< HEAD
     path('listaPacientes', views.listaPacientes, name='listaPacientes'),
+=======
+    path('presentacion/', views.presentacion, name='presentacion'),
+    path('mision/', views.mision, name='mision'),
+    path('vision/', views.vision, name='vision'),
+    path('contacto/', views.contacto, name='contacto'),
+>>>>>>> origin/FrankPool
     path('admin/', admin.site.urls),
     path('', views.home, name='inventario'),
     path('bodega/', views.inventario, name='bodega'),
