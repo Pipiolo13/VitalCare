@@ -1,10 +1,14 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "python.pythonPath": "C:\\Users\\USER\\miniconda3\\envs\\prueba\\python.exe"
 =======
 >>>>>>> origin/Bryan
 =======
     "python.pythonPath": "C:\\miniconda3\\envs\\django2\\python.exe"
 >>>>>>> origin/FrankPool
+=======
+    "python.pythonPath": "C:\\miniconda3\\envs\\desarrollo\\python.exe"
+>>>>>>> origin/HenryS
 }
