@@ -12,12 +12,13 @@ def inventario(request):
     return render(request, "core/bodega.html")
 
 
-# Create your views here.....
-
-
 def home(request):
     return render(request, "core/home.html")
 
 
 def listaPacientes(request):
     return render(request, "core/ListaPacientes.html")
+
+
+def loguin(request):
+    return render(request, "core/loguin.html")
