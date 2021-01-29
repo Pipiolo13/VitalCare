@@ -170,7 +170,16 @@
                                 <li><a href="{% url 'bodega' %}">Bodega</a></li>
                             </ul>
                         </li>
-
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-wheelchair"></i> <span> Pacientes </span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="{% url 'lista_pacientes' %}">Lista de Pacientes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{% url 'agenda' %}"><i class="fa fa-calendar"></i> <span>Agenda</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>

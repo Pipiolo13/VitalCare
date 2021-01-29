@@ -16,8 +16,8 @@ def home(request):
     return render(request, "core/home.html")
 
 
-def listaPacientes(request):
-    return render(request, "core/ListaPacientes.html")
+def lista_pacientes(request):
+    return render(request, "core/pacientes.html")
 
 
 def login(request):
@@ -44,8 +44,8 @@ def contacto(request):
     return render(request, "core/contacto.html")
 
 
-def enfermeria(request):
-    return render(request, "core/enfermeria.html")
+def agenda(request):
+    return render(request, "core/agenda.html")
 
 
 def enfermeria(request):
