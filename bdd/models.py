@@ -18,7 +18,7 @@ class Question(models.Model):
         # ordering = ["created"]
 
     def __str__(self):
-        return self.quest
+        return self.name
 
 
 class User(models.Model):
@@ -52,6 +52,9 @@ class User(models.Model):
         verbose_name_plural = "Usuarios"
         ordering = ["created"]
 
+    def __str__(self):
+        return self.name
+
 
 class Medic(models.Model):
     iduser = models.ForeignKey(
@@ -71,7 +74,7 @@ class Medic(models.Model):
         ordering = ["updated"]
 
     def __str__(self):
-        return self.name + " " + self.lastname
+        return self.name
 
 
 class Specialty (models.Model):
@@ -95,6 +98,9 @@ class MedicSpecialty (models.Model):
     class Meta:
         verbose_name = "Medico especialidad"
         verbose_name_plural = "Medico especialidad"
+
+    def __str__(self):
+        return self.name
 
 
 class Supplier (models.Model):
@@ -208,7 +214,7 @@ class Record(models.Model):
         ordering = ["created"]
 
     def __str__(self):
-        return self.patientid
+        return self.name
 
 
 class Schedule(models.Model):
@@ -232,6 +238,9 @@ class Schedule(models.Model):
         verbose_name_plural = "Agenda"
         ordering = ["active"]
 
+    def __str__(self):
+        return self.name
+
 
 class Examination(models.Model):
     observations = models.TextField(verbose_name="Observaciones")
@@ -240,6 +249,9 @@ class Examination(models.Model):
     class Meta:
         verbose_name = "Examen"
         verbose_name_plural = "Examenes"
+
+    def __str__(self):
+        return self.name
 
 
 class Consultation(models.Model):
@@ -267,7 +279,9 @@ class Consultation(models.Model):
     medication = models.TextField(verbose_name="Medicacion")
     recommendations = models.TextField(verbose_name="Recomendaciones")
 
+    class Meta:
+        verbose_name = "Consulta"
+        verbose_name_plural = "Consultas"
 
-class Meta:
-    verbose_name = "Consulta"
-    verbose_name_plural = "Consultas"
+    def __str__(self):
+        return self.name
