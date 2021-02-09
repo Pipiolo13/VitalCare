@@ -1,0 +1,60 @@
+{% extends 'core/pharmacist/basep.html' %}
+{% block content %}
+{% load static from staticfiles %}
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-5 col-4">
+                <h4 class="page-title">Tabla de Productos</h4>
+            </div>
+            <div class="col-sm-7 col-8 text-right m-b-30">
+                <a href="{% url 'inventoryNew' %}" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i>
+                    Agregar nuevo Producto</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table mb-0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Codigo de Producto</th>
+                                <th>Nombre</th>
+                                <th>Fecha de caducidad</th>
+                                <th>Costo</th>
+                                <th>Stock</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for inv in invs %}
+                            <tr>
+                                <td>{{inv.id}}</td>
+                                <td>{{inv.code}}</td>
+                                <td>{{inv.name}}</td>
+                                <td>{{inv.duedate}}</td>
+                                <td>{{inv.cost}}</td>
+                                <td>{{inv.stocks}}</td>
+                                <td class="text-right">
+                                    <div class="dropdown dropdown-action">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                                            aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="{% url 'inventoryDelete' inv.id %}"
+                                                data-toggle="modal" data-target=""><i class="fa fa-trash-o m-r-5"></i>
+                                                Eliminar</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

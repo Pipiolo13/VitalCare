@@ -1,0 +1,24 @@
+{% extends 'core/pharmacist/basep.html' %}
+{% block content %}
+{% load static from staticfiles %}
+<div id="delete_invoice" class="modal fade delete-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="{% static 'core/img/sent.png' %}" width="50" height="46">
+                <h3>Esta seguro de eliminar este producto?</h3>
+                <div class="m-t-20"> <a href="" class="btn btn-white" data-dismiss="modal">Cerrar</a>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">
+                            <a>
+                                Eliminar
+                            </a>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
