@@ -1,0 +1,11 @@
+{% extends 'core/nursing/basen.html' %}
+{% block user %}
+<b>{{request.user.first_name}} {{request.user.last_name}}</b>
+{% endblock %}
+{% block content %}
+<h2>Área para miembros</h2>
+<p>
+    Bienvenido <b>{{request.user.first_name}}</b>,
+    esta página es exclusiva para usuarios Enfermeros/as.
+</p>
+{% endblock %}

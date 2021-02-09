@@ -1,0 +1,88 @@
+<html lang="en">
+
+
+<!-- login23:11-->
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'core/assets/img/favicon.ico' %}">
+    <title>VitalCare_ Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css/style.css' %}">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main-wrapper account-wrapper">
+        <div class="account-page">
+            <div class="account-center">
+                <div class="account-box">
+                    {% comment "Este form da error "%}
+                    <form class="form-signin" role="form" method="POST">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="account-logo">
+                            <a href="#"><img src="{% static 'core/assets/img/logo-dark.png' %}" alt=""></a>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="{{ form.username.id_for_label }}">Nombre de usuario:</label>
+                            {{ form.username }}
+                            {{ form.username.errors }}
+
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.password.id_for_label }}">Contraseña:</label>
+                            {{ form.password }}
+                            {{ form.password.errors }}
+                        </div>
+                        <div class="form-group text-right">
+                            <a href="forgot-password.html">Forgot your password?</a>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary account-btn">Ingresar</button>
+                        </div>
+                        <div class="text-center register-link">
+                            Don’t have an account? <a href="">Register Now</a>
+                        </div>
+                    </form>
+                    {% endcomment %}
+                    <form class="form" role="form" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'core/assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'core/assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'core/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'core/assets/js/app.js' %}"></script>
+</body>
+
+
+<!-- login23:12-->
+
+</html>
