@@ -204,7 +204,7 @@ def appointmentNew(request, pk):
         if form.is_valid():
             form.usermodified = request.user
             form.save()
-            return render("appointments")
+            return redirect("appointments")
     return render(request, "core/nursing/add-appointment.html", {"form": form, 'pk': pk})
 
 # ================================================================

@@ -212,7 +212,7 @@ class Record(models.Model):
         return self.patientid
 
 
-class Schedule(models.Model):
+class Schedule(models.Model):  # agenda
     medicid = models.ForeignKey(
         Medic, verbose_name="Medico id", on_delete=DO_NOTHING)
     patientid = models.ForeignKey(
