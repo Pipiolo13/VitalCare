@@ -1,28 +1,21 @@
+{% extends 'core/nursing/basen.html' %}
+{% block content %}
+{% load static from staticfiles %}
 <div class="page-wrapper">
     <div class="content">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <h4 class="page-title">Add Appointment</h4>
+                <h4 class="page-title">Agendar cita</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <form>
+                <form method="POST">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Appointment ID</label>
-                                <input class="form-control" type="text" value="APT-0001" readonly="">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Patient Name</label>
-                                <select class="select">
-                                    <option>Select</option>
-                                    <option>Jennifer Robinson</option>
-                                    <option>Terry Baker</option>
-                                </select>
+
                             </div>
                         </div>
                     </div>

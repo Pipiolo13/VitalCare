@@ -155,9 +155,10 @@ def records(request, pk):
 
 # registramos la consulta del paciente con el id
 def recordNew(request, pk):
+    patient = get_object_or_404(Patient, pk=pk)
     form = RecordForm()
     if request.method == "POST":
-        form = RecordForm(data=request.POST)
+        form = RecordForm(request.POST, instance=patient)
         if form.is_valid():
             form.usermodified = request.user
             form.save()
@@ -195,15 +196,16 @@ def appointments(request):
     return render(request, "core/nursing/appointments.html", {"citas": citas})
 
 
-def appointmentNew(request):
+def appointmentNew(request, pk):
+    patient = get_object_or_404(Patient, pk=pk)
     form = ScheduleForm()
     if request.method == "POST":
-        form = ScheduleForm(data=request.POST)
+        form = ScheduleForm(request.POST, instance=patient)
         if form.is_valid():
             form.usermodified = request.user
             form.save()
             return render("appointments")
-    return render(request, "core/nursing/add-appointment.html", {"form": form})
+    return render(request, "core/nursing/add-appointment.html", {"form": form, 'pk': pk})
 
 # ================================================================
 
