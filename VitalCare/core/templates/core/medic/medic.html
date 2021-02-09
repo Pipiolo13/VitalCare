@@ -3,13 +3,26 @@
 <b>{{request.user.first_name}} {{request.user.last_name}}</b>
 {% endblock %}
 {% block menu %}
-
-
 {% endblock %}
+
+
+
+        
+
 {% block content %}
-<h2>Área para miembros</h2>
-<p>
-    Bienvenido <b>{{request.user.first_name}}</b>,
-    esta página es exclusiva para usuarios Medicos.
-</p>
-{% endblock %}
+
+
+<div class="page-wrapper">
+    <div class="content">
+        
+        <div class="row">
+            <div class="col-sm-4 col-3">
+                <p>
+                    Bienvenido <b>{{request.user.first_name}}</b>,
+                    esta página es exclusiva para usuarios Medicos.
+                </p>
+            </div>
+   
+
+
+  {% endblock %}

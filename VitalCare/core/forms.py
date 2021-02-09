@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import AuthenticationForm
-from .models import Supplier, Product, Patient, Record, Category, Schedule, Medic, MedicSpecialty, Specialty
+from .models import Supplier, Product, Patient, Record, Category, Schedule, Medic, MedicSpecialty, Specialty,Consultation
 from django import forms
 
 
@@ -87,3 +87,13 @@ class ScheduleForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['patientid'].queryset = Patient.objects.none()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['medicid'].queryset = Specialty.objects.none()
+
+
+class ConsultationForm(forms.ModelForm):
+    class Meta:
+        model = Consultation
+        fields = "__all__"

@@ -12,6 +12,7 @@ urlpatterns = [
     path('patientsm', views.patientsm, name="patientsm"),
     path('records', views.records, name="records"),
     path('recordNew', views.recordNew, name="recordNew"),
+    path('consultationNew', views.consultationNew, name="consultationNew"),
     # =====================
     path('nursing', views.nursing, name="nursing"),
     path('patientsn', views.patientsn, name="patientsn"),

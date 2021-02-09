@@ -69,7 +69,7 @@ class Medic(models.Model):
         ordering = ["updated"]
 
     def __str__(self):
-        return self.name
+        return self.iduser
 
 
 class Specialty (models.Model):
@@ -95,7 +95,7 @@ class MedicSpecialty (models.Model):
         verbose_name_plural = "Medico especialidad"
 
     def __str__(self):
-        return self.name
+        return self.specialtyid
 
 
 class Supplier (models.Model):  # tabla proveedor
@@ -209,7 +209,7 @@ class Record(models.Model):
         ordering = ["created"]
 
     def __str__(self):
-        return self.name
+        return self.patientid
 
 
 class Schedule(models.Model):
@@ -250,8 +250,7 @@ class Examination(models.Model):
 
 
 class Consultation(models.Model):
-    scheduleid = models.ForeignKey(
-        Schedule, verbose_name="Agenda di", on_delete=DO_NOTHING)
+    patientid = models.ForeignKey(Patient, verbose_name="Agenda di", on_delete=DO_NOTHING)
     dateattention = models.DateTimeField(
         verbose_name="Fecha de atencion", auto_now_add=True)
     height = models.DecimalField(

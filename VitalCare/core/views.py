@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from .models import Userdata, Product, Patient, Schedule, Record
 from django.contrib.auth.models import User, Group
-from .forms import ProductForm, PatientForm, RecordForm, ScheduleForm
+from .forms import ProductForm, PatientForm, RecordForm, ScheduleForm,Consultation,ConsultationForm
 
 # Create your views here.
 
@@ -140,6 +140,18 @@ def schedule(request):
     citas = Schedule.objects.all()
     return render(request, "core/medic/schedule.html", {"citas": citas})
 
+    # Entramos a una nueva consulta desde la agenda de citas con el id de la cita
+def consultationNew(request, pk):
+    cita = get_object_or_404(Patient, pk=pk)
+    form = ConsultationForm()
+    if request.method == "POST":
+        form = ConsultationForm(request.POST, instance=cita)
+        if form.is_valid():
+            form.save()
+            Schedule.objects.filter(id=pk).update(active=False)
+            return redirect("patientsm")
+    return render(request, "core/medic/add-consultation.html", {"form": form, 'pk': pk})
+
 
 # primero Entra a los pacientes
 def patientsm(request):
@@ -155,9 +167,10 @@ def records(request, pk):
 
 # registramos la consulta del paciente con el id
 def recordNew(request, pk):
+    patient = get_object_or_404(Patient, pk=pk)
     form = RecordForm()
     if request.method == "POST":
-        form = RecordForm(data=request.POST)
+        form = RecordForm(request.POST, instance=patient)
         if form.is_valid():
             form.usermodified = request.user
             form.save()
@@ -195,15 +208,16 @@ def appointments(request):
     return render(request, "core/nursing/appointments.html", {"citas": citas})
 
 
-def appointmentNew(request):
+def appointmentNew(request, pk):
+    patient = get_object_or_404(Patient, pk=pk)
     form = ScheduleForm()
     if request.method == "POST":
-        form = ScheduleForm(data=request.POST)
+        form = ScheduleForm(request.POST, instance=patient)
         if form.is_valid():
             form.usermodified = request.user
             form.save()
             return render("appointments")
-    return render(request, "core/nursing/add-appointment.html", {"form": form})
+    return render(request, "core/nursing/add-appointment.html", {"form": form, 'pk': pk})
 
 # ================================================================
 
