@@ -220,6 +220,8 @@ class Schedule(models.Model):  # agenda
         verbose_name="Fecha de creacion", auto_now_add=True)
     dateappointment = models.DateTimeField(
         verbose_name="Fecha de la cita")
+    usermodified = models.ForeignKey(
+        UserManager, verbose_name="Ultimo Usuario modificador", on_delete=DO_NOTHING)
     active = models.BooleanField(default=True)
 
     class Meta:

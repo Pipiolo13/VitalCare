@@ -23,16 +23,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Doctor</label>
-                                <select class="select">
-                                    <option>Select</option>
-                                    <option>Dentists</option>
-                                    <option>Neurology</option>
-                                    <option>Opthalmology</option>
-                                    <option>Orthopedics</option>
-                                    <option>Cancer Department</option>
-                                    <option>ENT Department</option>
-                                </select>
-                                {{form.medicid}}
+
+                                {{form.medicid.all}}
                             </div>
                         </div>
                     </div>
@@ -41,7 +33,6 @@
                             <div class="form-group">
                                 <label>Date</label>
                                 <div class="cal-icon">
-                                    <input type="text" class="form-control datetimepicker">
                                     {{form.dateappointment}}
                                 </div>
                             </div>
@@ -62,8 +53,6 @@
                             <div class="form-group row">
                                 <label class="col-form-label col-md-2">Razon de la consulta</label>
                                 <div class="col-md-10">
-                                    <textarea rows="5" cols="5" class="form-control"
-                                        placeholder="Enter text here"></textarea>
                                     {{form.reazon}}
                                 </div>
                             </div>
@@ -71,8 +60,6 @@
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-2">Sintomas</label>
                                     <div class="col-md-10">
-                                        <textarea rows="5" cols="5" class="form-control"
-                                            placeholder="Enter text here"></textarea>
                                         {{form.symptoms}}
                                     </div>
                                 </div>
@@ -83,8 +70,6 @@
                             <div class="form-group row">
                                 <label class="col-form-label col-md-2">Medicacion</label>
                                 <div class="col-md-10">
-                                    <textarea rows="5" cols="5" class="form-control"
-                                        placeholder="Enter text here"></textarea>
                                     {{form.medication}}
                                 </div>
                             </div>
@@ -99,3 +84,4 @@
     </div>
 
 </div>
+{% endblock %}
