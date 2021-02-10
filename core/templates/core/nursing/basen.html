@@ -133,7 +133,7 @@
                                 alt="Admin">
                             <span class="status online"></span>
                         </span>
-                        <span>{% block user %}{% endblock %}</span>
+                        <span><b>{{request.user.first_name}} {{request.user.last_name}}</b></span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="profile.html">Mi Perfil</a>
@@ -160,11 +160,11 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="{% url 'medic' %}"><i class="fa fa-dashboard"></i> <span>Inicio</span></a>
+                            <a href="{% url 'nursing' %}"><i class="fa fa-dashboard"></i> <span>Inicio</span></a>
                         </li>
-                        {% block menu %}
-
-                        {% endblock %}
+                        <li>
+                            <a href="{% url 'patientsn' %}"><i class="fa fa-wheelchair"></i> <span>Pacientes</span></a>
+                        </li>
 
 
                     </ul>

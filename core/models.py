@@ -141,8 +141,6 @@ class Product (models.Model):  # tabla productos
     duedate = models.DateField(verbose_name="Fecha de vencimiento")
     updated = models.DateTimeField(
         verbose_name="Fecha de actualizacion", auto_now=True)
-    usermodified = models.ForeignKey(
-        UserManager, verbose_name="Ultimo Usuario modificador", on_delete=DO_NOTHING)
     code = models.CharField(verbose_name="Codigo", max_length=255)
 
     class Meta:
@@ -166,8 +164,6 @@ class Patient (models.Model):  # tabla paciente con los datos basicos del pacien
         verbose_name="Fecha de creacion", auto_now_add=True)
     updated = models.DateTimeField(
         verbose_name="Fecha de actualizacion", auto_now=True)
-    usermodified = models.ForeignKey(
-        UserManager, verbose_name="Ultimo Usuario modificador", on_delete=DO_NOTHING)
     active = models.BooleanField(default=True)
 
     class Meta:
@@ -179,7 +175,7 @@ class Patient (models.Model):  # tabla paciente con los datos basicos del pacien
         return self.name
 
 
-class Record(models.Model):
+class Record(models.Model):  # antecedentes
     patientid = models.ForeignKey(
         Patient, verbose_name="Paciente id", on_delete=DO_NOTHING)
     created = models.DateTimeField(
@@ -224,8 +220,6 @@ class Schedule(models.Model):  # agenda
         verbose_name="Fecha de creacion", auto_now_add=True)
     dateappointment = models.DateTimeField(
         verbose_name="Fecha de la cita")
-    usermodified = models.ForeignKey(
-        UserManager, verbose_name="Ultimo Usuario modificador", on_delete=DO_NOTHING)
     active = models.BooleanField(default=True)
 
     class Meta:
@@ -234,7 +228,7 @@ class Schedule(models.Model):  # agenda
         ordering = ["active"]
 
     def __str__(self):
-        return self.name
+        return self.patientid
 
 
 class Examination(models.Model):
@@ -246,12 +240,13 @@ class Examination(models.Model):
         verbose_name_plural = "Examenes"
 
     def __str__(self):
-        return self.name
+        return self.observations
 
 
 class Consultation(models.Model):
-    scheduleid = models.ForeignKey(
-        Schedule, verbose_name="Agenda di", on_delete=DO_NOTHING)
+    diagnostic = models.TextField(verbose_name="Diagnostico")
+    patientid = models.ForeignKey(
+        Patient, verbose_name="PacienteId", on_delete=models.CASCADE)
     dateattention = models.DateTimeField(
         verbose_name="Fecha de atencion", auto_now_add=True)
     height = models.DecimalField(
@@ -270,7 +265,7 @@ class Consultation(models.Model):
         verbose_name="Frecuencia cardiaca", max_digits=5, decimal_places=2)
     breathingfrequency = models.DecimalField(
         verbose_name="Frecuencia respiratoria", max_digits=5, decimal_places=2)
-    diagnosis = models.TextField(verbose_name="Diagnostico")
+
     medication = models.TextField(verbose_name="Medicacion")
     recommendations = models.TextField(verbose_name="Recomendaciones")
 
@@ -279,4 +274,4 @@ class Consultation(models.Model):
         verbose_name_plural = "Consultas"
 
     def __str__(self):
-        return self.name
+        return self.diagnostic

@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import AuthenticationForm
-from .models import Supplier, Product, Patient, Record, Category, Schedule, Medic, MedicSpecialty, Specialty
+from .models import Supplier, Product, Patient, Record, Consultation, Category, Schedule, Medic, MedicSpecialty, Specialty
 from django import forms
 
 
@@ -28,6 +28,21 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = "__all__"
 
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Nombre"}))
+    code = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Codigo"}))
+    stocks = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Stock"}))
+    cost = forms.DecimalField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "0.00"}))
+    unitvalue = forms.DecimalField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "0.00"}))
+    packagevalue = forms.DecimalField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "0.00"}))
+    duedate = forms.DateTimeField(required=True, widget=forms.DateTimeInput(
+        attrs={"class": "form-control"}))
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['categoryid'].queryset = Category.objects.none()
@@ -41,6 +56,21 @@ class PatientForm(forms.ModelForm):
     class Meta:
         model = Patient
         fields = "__all__"
+
+    name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Nombre"}))
+    lastname = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Apellido"}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Email"}))
+    dni = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Numero de cedula"}))
+    gender = forms.CharField(widget=forms.TextInput(
+        attrs={"class": "form-control"}))
+    address = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Direccion"}))
+    phone = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={"class": "form-control", "placeholder": "Telefono"}))
 
 
 class RecordForm(forms.ModelForm):
@@ -87,3 +117,9 @@ class ScheduleForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['medicid'].queryset = Medic.objects.none()
+
+
+class ConsultationForm(forms.ModelForm):
+    class Meta:
+        model = Consultation
+        fields = "__all__"

@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from .models import Userdata, Product, Patient, Schedule, Record
 from django.contrib.auth.models import User, Group
-from .forms import ProductForm, PatientForm, RecordForm, ScheduleForm
+from .forms import ProductForm, PatientForm, RecordForm, ScheduleForm, ConsultationForm
 
 # Create your views here.
 
@@ -108,7 +108,6 @@ def inventoryNew(request):
     if request.method == "POST":
         form = ProductForm(data=request.POST)
         if form.is_valid():
-            form.usermodified = request.user
             form.save()
             return redirect('inventory')
     return render(request, 'core/pharmacist/add-inventory.html', {'form': form})
@@ -137,8 +136,21 @@ def medic(request):
 
 
 def schedule(request):
-    citas = Schedule.objects.all()
+    citas = Schedule.objects.filter(active=True)
     return render(request, "core/medic/schedule.html", {"citas": citas})
+
+
+# Entramos a una nueva consulta desde la agenda de citas con el id de la cita
+def consultationNew(request, pk):
+    cita = get_object_or_404(Patient, pk=pk)
+    form = ConsultationForm()
+    if request.method == "POST":
+        form = ConsultationForm(request.POST, instance=cita)
+        if form.is_valid():
+            form.save()
+            Schedule.objects.filter(id=pk).update(active=False)
+            return redirect("patientsm")
+    return render(request, "core/medic/add-consultation.html", {"form": form, 'pk': pk})
 
 
 # primero Entra a los pacientes
@@ -147,20 +159,19 @@ def patientsm(request):
     return render(request, "core/medic/patients-m.html", {"pats": pats})
 
 
-# para ver las consultas de un paciente se pide el id del mismo
+# para ver los antecedentes de un paciente se pide el id del mismo
 def records(request, pk):
     recs = get_object_or_404(Record, pk=pk)
     return render(request, "core/medic/records.html", {'recs': recs})
 
 
-# registramos la consulta del paciente con el id
+# registramos los antecedentes del paciente con el id
 def recordNew(request, pk):
     patient = get_object_or_404(Patient, pk=pk)
     form = RecordForm()
     if request.method == "POST":
         form = RecordForm(request.POST, instance=patient)
         if form.is_valid():
-            form.usermodified = request.user
             form.save()
             return redirect('records')
     return render(request, "core/medic/add-record.html", {'form': form, 'pk': pk})
@@ -183,9 +194,8 @@ def patientNew(request):
     if request.method == "POST":
         form = PatientForm(data=request.POST)
         if form.is_valid():
-            form.usermodified = request.user
             form.save()
-            return redirect('patients-m')
+            return redirect('patientsn')
     return render(request, 'core/nursing/add-patient.html', {'form': form})
 
 
@@ -202,7 +212,6 @@ def appointmentNew(request, pk):
     if request.method == "POST":
         form = ScheduleForm(request.POST, instance=patient)
         if form.is_valid():
-            form.usermodified = request.user
             form.save()
             return redirect("appointments")
     return render(request, "core/nursing/add-appointment.html", {"form": form, 'pk': pk})

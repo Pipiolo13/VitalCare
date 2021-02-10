@@ -10,17 +10,18 @@ urlpatterns = [
     path('medic', views.medic, name="medic"),
     path('schedule', views.schedule, name="schedule"),
     path('patientsm', views.patientsm, name="patientsm"),
-    path('records', views.records, name="records"),
-    path('recordNew', views.recordNew, name="recordNew"),
+    path('records/<int:pk>', views.records, name="records"),
+    path('recordNew/<int:pk>', views.recordNew, name="recordNew"),
+    path('consultationNew/<int:pk>', views.consultationNew, name="consultationNew"),
     # =====================
     path('nursing', views.nursing, name="nursing"),
     path('patientsn', views.patientsn, name="patientsn"),
     path('patientNew', views.patientNew, name="patientNew"),
     path('appointments', views.appointments, name="appointments"),
-    path('appointmentNew', views.appointmentNew, name="appointmentNew"),
+    path('appointmentNew/<int:pk>', views.appointmentNew, name="appointmentNew"),
     # =====================
     path('pharmacist', views.pharmacist, name="pharmacist"),
     path('inventory', views.inventory, name="inventory"),
     path('inventoryNew', views.inventoryNew, name="inventoryNew"),
-    path('inventoryDelete', views.inventoryDelete, name="inventoryDelete"),
+    path('inventoryDelete/<int:pk>', views.inventoryDelete, name="inventoryDelete"),
 ]
